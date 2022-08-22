@@ -18,12 +18,17 @@ function gameLoop(state, game, timestamp){
         game.createCloud(state.cloudState);
         state.cloudState.nextSpawnTimestamp = timestamp + Math.random()*state.cloudState.maxSpawnInterval;
     }
-    
 
     //Render player
     playerAvatarElement.style.left = playerAvatar.posX + 'px';
     playerAvatarElement.style.top = playerAvatar.posY + 'px';
 
+    //Render clouds
+    document.querySelectorAll('.cloud').forEach(cloud=>{
+        let posX = parseInt(cloud.style.top);
+
+        cloud.style.top = posX + state.cloudState.speed + 'px';
+    });
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
