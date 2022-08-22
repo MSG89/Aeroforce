@@ -6,10 +6,10 @@ body{
 .game{
     width: 100vw;
     height: 100vh;
-    background-color: lightblue;
+    background-color: aqua;
 }
 
-.startScreen{
+.start-screen{
 
     background-color: darkred;
     border-radius: 25px;
@@ -29,7 +29,17 @@ body{
 
     transform: translate(-50%);
 }
-.startScreen:hover{
+.start-screen:hover{
     background-color: red;
     cursor: pointer;
+}
+
+.game-screen{
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+}
+
+.hidden{
+    display:none;
 }
