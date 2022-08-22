@@ -2,10 +2,10 @@
 function start(state, game){
     game.createPlayerAvatar(state.playerAvatar);
 
-    window.requestAnimationFrame(gameLoop.bind(null, state, game));
+    window.requestAnimationFrame(timestamp => gameLoop(state,game,timestamp));
 }
 
-function gameLoop(state, game){
+function gameLoop(state, game, timestamp){
 
     //destructing object
     const {playerAvatar} = state;
@@ -14,7 +14,11 @@ function gameLoop(state, game){
     modifyPlayerAvatarPosition(state,game);
 
     //create clouds
-    game.createCloud(state.cloudState);
+    if(timestamp > state.cloudState.nextSpawnTimestamp){
+        game.createCloud(state.cloudState);
+        state.cloudState.nextSpawnTimestamp = timestamp + Math.random()*state.cloudState.maxSpawnInterval;
+    }
+    
 
     //Render player
     playerAvatarElement.style.left = playerAvatar.posX + 'px';

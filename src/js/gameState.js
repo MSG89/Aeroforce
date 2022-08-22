@@ -15,9 +15,9 @@ function initState(){
         cloudState:{
             width: 150,
             height: 82,
+            nextSpawnTimestamp: 0,
+            maxSpawnInterval: 3000,
 
-            posX: 10,
-            posY: 10,
         },
         keys:{
             KeyA: false,

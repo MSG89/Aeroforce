@@ -28,7 +28,7 @@ function initGameObjects() {
             cloudElement.style.height = stats.height + 'px';
 
             cloudElement.style.left = Math.floor(Math.random()*(gameScreen.offsetWidth-stats.width)) + 'px';
-            cloudElement.style.top = -80 + 'px';
+            cloudElement.style.top = -50 + 'px';
 
             this.gameScreen.appendChild(cloudElement);
 
