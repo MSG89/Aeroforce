@@ -12,8 +12,8 @@ function initGameObjects() {
             playerAvatarElement.style.width = initialState.width + 'px';
             playerAvatarElement.style.height = initialState.height + 'px';
 
-            playerAvatarElement.style.left = initialState.startX + 'px';
-            playerAvatarElement.style.top = initialState.startY + 'px';
+            playerAvatarElement.style.left = initialState.posX + 'px';
+            playerAvatarElement.style.top = initialState.posY + 'px';
 
             this.playerAvatarElement = playerAvatarElement;
             this.gameScreen.appendChild(playerAvatarElement);
