@@ -12,16 +12,16 @@ function gameLoop(state, game){
     
     //moving playerAvatar
     if(state.keys.KeyD){
-        playerAvatar.posX += 2;
+        playerAvatar.posX = Math.min(playerAvatar.posX + playerAvatar.speed, game.gameScreen.offsetWidth - playerAvatar.width);
     }
     if(state.keys.KeyA){
-        playerAvatar.posX -= 2;
+        playerAvatar.posX = Math.max(playerAvatar.posX - playerAvatar.speed,0);
     }
     if(state.keys.KeyW){
-        playerAvatar.posY -= 2;
+        playerAvatar.posY = Math.max(playerAvatar.posY - playerAvatar.speed,0);
     }
     if(state.keys.KeyS){
-        playerAvatar.posY += 2;
+        playerAvatar.posY = Math.min(playerAvatar.posY + playerAvatar.speed, game.gameScreen.offsetHeight - playerAvatar.height);
     }
 
 

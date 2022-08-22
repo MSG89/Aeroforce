@@ -6,8 +6,11 @@ function initState(){
         playerAvatar:{
             width: 70,
             height: 117,
+
             posX: startX,
             posY:startY,
+
+            speed: 2,
         },
         keys:{
 
