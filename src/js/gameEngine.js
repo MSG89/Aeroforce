@@ -1,4 +1,6 @@
 function start(state, game){
+    game.createPlayerAvatar(state.playerAvatar);
+
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
 
