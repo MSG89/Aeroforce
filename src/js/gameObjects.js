@@ -19,6 +19,19 @@ function initGameObjects() {
             this.gameScreen.appendChild(playerAvatarElement);
 
             return playerAvatarElement;
+        },
+        createCloud(stats){
+            let cloudElement = document.createElement('div');
+            cloudElement.classList.add('cloud');
+
+            cloudElement.style.width = stats.width + 'px';
+            cloudElement.style.height = stats.height + 'px';
+
+            cloudElement.style.left = Math.floor(Math.random()*(gameScreen.offsetWidth-stats.width)) + 'px';
+            cloudElement.style.top = -80 + 'px';
+
+            this.gameScreen.appendChild(cloudElement);
+
         }
     }
 

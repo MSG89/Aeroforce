@@ -1,6 +1,6 @@
 function initState(){
-    let startX = 200;
-    let startY = 200;
+    let startX = Math.floor(Math.random()*1500);
+    let startY = 500;
 
     const state = {
         playerAvatar:{
@@ -8,12 +8,22 @@ function initState(){
             height: 117,
 
             posX: startX,
-            posY:startY,
+            posY: startY,
 
             speed: 2,
         },
-        keys:{
+        cloudState:{
+            width: 150,
+            height: 82,
 
+            posX: 10,
+            posY: 10,
+        },
+        keys:{
+            KeyA: false,
+            KeyS: false,
+            KeyD: false,
+            KeyW: false,
         }
     }
     return state;

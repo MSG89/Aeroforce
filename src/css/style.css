@@ -43,7 +43,15 @@ body{
     position: absolute;
     width: 70px;
     height: 117px;
-    background-image: url('/src/css/images/player.png')
+    background-image: url('/src/css/images/player.png');
+    background-size:cover;
+}
+.cloud{
+    position: absolute;
+    width: 150px;
+    height: 82px;
+    background-image: url('/src/css/images/cloud.png');
+    background-size:cover;
 }
 
 .hidden{
