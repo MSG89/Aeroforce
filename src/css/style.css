@@ -8,3 +8,28 @@ body{
     height: 100vh;
     background-color: lightblue;
 }
+
+.startScreen{
+
+    background-color: darkred;
+    border-radius: 25px;
+    padding: 30px;
+
+    text-align: center;
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+
+    width: 300px;
+    height: 100px;
+
+    position: absolute;
+    left: 50%;
+    top: 25%;
+
+    transform: translate(-50%);
+}
+.startScreen:hover{
+    background-color: red;
+    cursor: pointer;
+}
