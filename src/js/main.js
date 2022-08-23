@@ -6,6 +6,7 @@ const availableKeys = [
     'KeyS',
     'KeyD',
     'KeyW',
+    'Space',
 ];
 
 //checks if a particular key is 'down'

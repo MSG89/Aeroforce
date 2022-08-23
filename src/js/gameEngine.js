@@ -13,6 +13,10 @@ function gameLoop(state, game, timestamp){
     
     modifyPlayerAvatarPosition(state,game);
 
+    if(state.keys.Space){
+        game.createMissile(playerAvatar, state.missileState);
+    }
+
     //create clouds
     if(timestamp > state.cloudState.nextSpawnTimestamp){
         game.createCloud(state.cloudState);

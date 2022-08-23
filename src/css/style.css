@@ -46,6 +46,11 @@ body{
     background-image: url('/src/css/images/player.png');
     background-size:cover;
 }
+.missile{
+    position: absolute;
+    background-image: url('/src/css/images/missile_PNG28.png');
+    background-size: cover;
+}
 .enemy{
     position: absolute;
     width: 96px;

@@ -27,11 +27,16 @@ function initState(){
             maxSpawnInterval: 1500,
             speed: 2,
         },
+        missileState:{
+            width: 23,
+            height: 85,
+        },
         keys:{
             KeyA: false,
             KeyS: false,
             KeyD: false,
             KeyW: false,
+            Space: false,
         }
     }
     return state;
