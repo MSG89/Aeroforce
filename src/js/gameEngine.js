@@ -25,9 +25,11 @@ function gameLoop(state, game, timestamp){
 
     //Render clouds
     document.querySelectorAll('.cloud').forEach(cloud=>{
-        let posX = parseInt(cloud.style.top);
-
-        cloud.style.top = posX + state.cloudState.speed + 'px';
+        let posY = parseInt(cloud.style.top);
+        if(posY > gameScreen.offsetHeight){
+            cloud.remove();
+        }
+        cloud.style.top = posY + state.cloudState.speed + 'px';
     });
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
