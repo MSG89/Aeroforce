@@ -40,11 +40,16 @@ function initGameObjects() {
             enemyElement.style.height = stats.height + 'px';
 
             enemyElement.style.left = Math.floor(Math.random()*(gameScreen.offsetWidth-stats.width)) + 'px';
-            enemyElement.style.top = -193 + 'px';
-
+            enemyElement.style.top = 0-stats.height + 'px';
+            if(stats == state.enemyStateT2){
+                enemyElement.style.backgroundImage = 'url("/src/css/images/enemyT2.png")';
+                enemyElement.classList.add('enemyT2');
+            }else if(stats == state.enemyStateT3){
+                enemyElement.style.backgroundImage = 'url("/src/css/images/enemyT3.jpg")';
+                enemyElement.classList.add('enemyT3');
+            }
 
             this.gameScreen.appendChild(enemyElement);
-
         },
         createCloud(stats){
             let cloudElement = document.createElement('div');

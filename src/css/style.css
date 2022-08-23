@@ -43,8 +43,6 @@ body{
 }
 .player-avatar{
     position: absolute;
-    width: 70px;
-    height: 117px;
     background-image: url('/src/css/images/player.png');
     background-size:cover;
     z-index: 2;
@@ -57,16 +55,12 @@ body{
 }
 .enemy{
     position: absolute;
-    width: 96px;
-    height: 193px;
     background-image: url('/src/css/images/enemy.png');
     background-size:cover;
     z-index: 2;
 }
 .cloud{
     position: absolute;
-    width: 150px;
-    height: 82px;
     background-image: url('/src/css/images/cloud.png');
     background-size:cover;
     z-index: 1;

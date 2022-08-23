@@ -10,6 +10,7 @@ function gameLoop(state, game, timestamp){
     //destructing object
     const {playerAvatar} = state;
     const {playerAvatarElement} = game;
+    let {enemyElement} = game;
 
 
     
@@ -32,8 +33,15 @@ function gameLoop(state, game, timestamp){
 
     //create enemy
     if(timestamp > state.enemyState.nextSpawnTimestamp){
-        game.createEnemy(state.enemyState);
         state.enemyState.nextSpawnTimestamp = timestamp + Math.random()*state.enemyState.maxSpawnInterval;
+        let spawnType = Math.round(Math.random()*100);
+        if(spawnType <= 80){
+            game.createEnemy(state.enemyState);
+        }else if(spawnType > 80 && spawnType < 95){
+            game.createEnemy(state.enemyStateT2);        
+        }else if(spawnType >= 95){
+            game.createEnemy(state.enemyStateT3);        
+        }
     }
 
     //Render clouds
@@ -59,6 +67,16 @@ function gameLoop(state, game, timestamp){
 
         if(posY < gameScreen.offsetHeight){
             enemy.style.top = posY + state.enemyState.speed + 'px';
+            if(enemy.classList.contains('enemyT2')){
+                enemy.style.top = posY + state.enemyStateT2.speed + 'px';
+            }
+            else if(enemy.classList.contains('enemyT3')){
+                enemy.style.top = posY + state.enemyStateT3.speed + 'px';
+            }
+
+
+        
+
         }else{
             enemy.remove();
         }

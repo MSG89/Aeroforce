@@ -27,6 +27,19 @@ function initState(){
             nextSpawnTimestamp: 0,
             maxSpawnInterval: 1500,
             speed: 2,
+            hp: 2,
+        },
+        enemyStateT2:{
+            width:363,
+            height:147,
+            speed: 3,
+            hp:4,
+        },
+        enemyStateT3:{
+            width:142,
+            height:268,
+            speed: 3,
+            hp: 8,
         },
         missileState:{
             width: 23,
