@@ -25,7 +25,7 @@ function initGameObjects() {
             missileElement.classList.add('missile');
 
             missileElement.style.left = playerAvatar.posX + playerAvatar.width/2 - missileState.width/2 + 'px';
-            missileElement.style.top = playerAvatar.posY - missileState.height + 'px';
+            missileElement.style.top = playerAvatar.posY + 'px';
 
             missileElement.style.width = missileState.width + 'px';
             missileElement.style.height = missileState.height + 'px';

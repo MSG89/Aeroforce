@@ -47,11 +47,13 @@ body{
     height: 117px;
     background-image: url('/src/css/images/player.png');
     background-size:cover;
+    z-index: 2;
 }
 .missile{
     position: absolute;
     background-image: url('/src/css/images/missile_PNG28.png');
     background-size: cover;
+    z-index: 2;
 }
 .enemy{
     position: absolute;
@@ -59,6 +61,7 @@ body{
     height: 193px;
     background-image: url('/src/css/images/enemy.png');
     background-size:cover;
+    z-index: 2;
 }
 .cloud{
     position: absolute;
@@ -66,6 +69,7 @@ body{
     height: 82px;
     background-image: url('/src/css/images/cloud.png');
     background-size:cover;
+    z-index: 1;
 }
 
 .hidden{
