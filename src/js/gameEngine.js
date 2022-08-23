@@ -18,6 +18,7 @@ function gameLoop(state, game, timestamp){
         game.createMissile(playerAvatar, state.missileState);
     }
 
+
     //create clouds
     if(timestamp > state.cloudState.nextSpawnTimestamp){
         game.createCloud(state.cloudState);
@@ -41,7 +42,9 @@ function gameLoop(state, game, timestamp){
     });
 
     //Render enemy planes
-    document.querySelectorAll('.enemy').forEach(enemy=>{
+    let enemyElements = document.querySelectorAll('.enemy');
+
+    enemyElements.forEach(enemy=>{
         let posY = parseInt(enemy.style.top);
         if(posY < gameScreen.offsetHeight){
             enemy.style.top = posY + state.enemyState.speed + 'px';
@@ -53,13 +56,21 @@ function gameLoop(state, game, timestamp){
     //render missile
     document.querySelectorAll('.missile').forEach(missile=>{
         let posY = parseInt(missile.style.top);
+
+        //detect missile/enemy collision
+        enemyElements.forEach(enemy =>{
+            if(detectCollision(enemy,missile)){
+                enemy.remove();
+                missile.remove();
+            }
+        })
+
         if(posY > 0-parseInt(missile.style.height)){
             missile.style.top = posY - state.missileState.speed + 'px';
         }else{
             missile.remove();
         }
-
-    })
+    });
 
     //Render player
     playerAvatarElement.style.left = playerAvatar.posX + 'px';
@@ -83,4 +94,17 @@ function modifyPlayerAvatarPosition(state, game){
    if(state.keys.KeyS){
        playerAvatar.posY = Math.min(playerAvatar.posY + playerAvatar.speed, game.gameScreen.offsetHeight - playerAvatar.height);
    }
+}
+
+//detect collision
+function detectCollision(objectA, objectB){
+    let first = objectA.getBoundingClientRect();
+    let second = objectB.getBoundingClientRect();
+
+    let hasCollision = !(first.top > second.bottom ||
+    first.bottom < second.top ||
+    first.right < second.left ||
+    first.left > second.right)
+
+    return hasCollision;
 }
