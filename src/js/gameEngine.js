@@ -15,7 +15,10 @@ function gameLoop(state, game, timestamp){
 
     //create missile
     if(state.keys.Space){
-        game.createMissile(playerAvatar, state.missileState);
+        if(timestamp > state.missileState.nextSpawnTimestamp){
+            game.createMissile(playerAvatar, state.missileState);
+            state.missileState.nextSpawnTimestamp = timestamp + state.missileState.spawnInterval;
+        }
     }
 
 
