@@ -10,10 +10,7 @@ function gameLoop(state, game, timestamp){
     //destructing object
     const {playerAvatar} = state;
     const {playerAvatarElement} = game;
-    let {enemyElement} = game;
 
-
-    
     modifyPlayerAvatarPosition(state,game);
 
     //create missile
@@ -73,10 +70,6 @@ function gameLoop(state, game, timestamp){
             else if(enemy.classList.contains('enemyT3')){
                 enemy.style.top = posY + state.enemyStateT3.speed + 'px';
             }
-
-
-        
-
         }else{
             enemy.remove();
         }
