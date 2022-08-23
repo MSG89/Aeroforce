@@ -10,6 +10,8 @@ function gameLoop(state, game, timestamp){
     //destructing object
     const {playerAvatar} = state;
     const {playerAvatarElement} = game;
+
+
     
     modifyPlayerAvatarPosition(state,game);
 
@@ -49,6 +51,12 @@ function gameLoop(state, game, timestamp){
 
     enemyElements.forEach(enemy=>{
         let posY = parseInt(enemy.style.top);
+
+        //detect collision with playerAvatar
+        if(detectCollision(playerAvatarElement,enemy)){
+            state.gameOver = true;
+        }
+
         if(posY < gameScreen.offsetHeight){
             enemy.style.top = posY + state.enemyState.speed + 'px';
         }else{
@@ -79,7 +87,11 @@ function gameLoop(state, game, timestamp){
     playerAvatarElement.style.left = playerAvatar.posX + 'px';
     playerAvatarElement.style.top = playerAvatar.posY + 'px';
 
-    window.requestAnimationFrame(gameLoop.bind(null, state, game));
+    if(state.gameOver){
+        alert('Game Over');
+    }else{
+        window.requestAnimationFrame(gameLoop.bind(null, state, game));
+    }
 }
 
 function modifyPlayerAvatarPosition(state, game){

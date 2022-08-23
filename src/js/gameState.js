@@ -3,6 +3,7 @@ function initState(){
     let startY = 500;
 
     const state = {
+        gameOver: false,
         playerAvatar:{
             width: 70,
             height: 117,
