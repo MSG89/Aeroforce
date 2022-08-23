@@ -19,6 +19,12 @@ function gameLoop(state, game, timestamp){
         state.cloudState.nextSpawnTimestamp = timestamp + Math.random()*state.cloudState.maxSpawnInterval;
     }
 
+    //create enemy
+    if(timestamp > state.enemyState.nextSpawnTimestamp){
+        game.createEnemy(state.enemyState);
+        state.enemyState.nextSpawnTimestamp = timestamp + Math.random()*state.enemyState.maxSpawnInterval;
+    }
+
     //Render player
     playerAvatarElement.style.left = playerAvatar.posX + 'px';
     playerAvatarElement.style.top = playerAvatar.posY + 'px';
@@ -32,6 +38,17 @@ function gameLoop(state, game, timestamp){
             cloud.remove();
         }
     });
+
+    //Render enemy planes
+    document.querySelectorAll('.enemy').forEach(enemy=>{
+        let posY = parseInt(enemy.style.top);
+        if(posY < gameScreen.offsetHeight){
+            enemy.style.top = posY + state.enemyState.speed + 'px';
+        }else{
+            enemy.remove();
+        }
+    });
+
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }

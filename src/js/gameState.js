@@ -20,6 +20,13 @@ function initState(){
             speed: 1,
 
         },
+        enemyState:{
+            width:96,
+            height:193,
+            nextSpawnTimestamp: 0,
+            maxSpawnInterval: 1500,
+            speed: 2,
+        },
         keys:{
             KeyA: false,
             KeyS: false,

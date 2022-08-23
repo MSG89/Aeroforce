@@ -20,6 +20,19 @@ function initGameObjects() {
 
             return playerAvatarElement;
         },
+        createEnemy(stats){
+            let enemyElement = document.createElement('div');
+            enemyElement.classList.add('enemy');
+
+            enemyElement.style.width = stats.width + 'px';
+            enemyElement.style.height = stats.height + 'px';
+
+            enemyElement.style.left = Math.floor(Math.random()*(gameScreen.offsetWidth-stats.width)) + 'px';
+            enemyElement.style.top = -193 + 'px';
+
+            this.gameScreen.appendChild(enemyElement);
+
+        },
         createCloud(stats){
             let cloudElement = document.createElement('div');
             cloudElement.classList.add('cloud');
@@ -28,7 +41,7 @@ function initGameObjects() {
             cloudElement.style.height = stats.height + 'px';
 
             cloudElement.style.left = Math.floor(Math.random()*(gameScreen.offsetWidth-stats.width)) + 'px';
-            cloudElement.style.top = -50 + 'px';
+            cloudElement.style.top = -82 + 'px';
 
             this.gameScreen.appendChild(cloudElement);
 

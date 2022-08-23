@@ -46,6 +46,13 @@ body{
     background-image: url('/src/css/images/player.png');
     background-size:cover;
 }
+.enemy{
+    position: absolute;
+    width: 96px;
+    height: 193px;
+    background-image: url('/src/css/images/enemy.png');
+    background-size:cover;
+}
 .cloud{
     position: absolute;
     width: 150px;
