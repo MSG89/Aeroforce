@@ -30,6 +30,7 @@ function initState(){
         missileState:{
             width: 23,
             height: 85,
+            speed: 10,
         },
         keys:{
             KeyA: false,

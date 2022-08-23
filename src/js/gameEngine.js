@@ -13,6 +13,7 @@ function gameLoop(state, game, timestamp){
     
     modifyPlayerAvatarPosition(state,game);
 
+    //create missile
     if(state.keys.Space){
         game.createMissile(playerAvatar, state.missileState);
     }
@@ -28,10 +29,6 @@ function gameLoop(state, game, timestamp){
         game.createEnemy(state.enemyState);
         state.enemyState.nextSpawnTimestamp = timestamp + Math.random()*state.enemyState.maxSpawnInterval;
     }
-
-    //Render player
-    playerAvatarElement.style.left = playerAvatar.posX + 'px';
-    playerAvatarElement.style.top = playerAvatar.posY + 'px';
 
     //Render clouds
     document.querySelectorAll('.cloud').forEach(cloud=>{
@@ -53,6 +50,20 @@ function gameLoop(state, game, timestamp){
         }
     });
 
+    //render missile
+    document.querySelectorAll('.missile').forEach(missile=>{
+        let posY = parseInt(missile.style.top);
+        if(posY > 0-parseInt(missile.style.height)){
+            missile.style.top = posY - state.missileState.speed + 'px';
+        }else{
+            missile.remove();
+        }
+
+    })
+
+    //Render player
+    playerAvatarElement.style.left = playerAvatar.posX + 'px';
+    playerAvatarElement.style.top = playerAvatar.posY + 'px';
 
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
