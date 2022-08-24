@@ -51,25 +51,25 @@ body{
 }
 .player-avatar{
     position: absolute;
-    background-image: url('/src/images/player.png');
+    background-image: url('../images/player.png');
     background-size:cover;
     z-index: 2;
 }
 .missile{
     position: absolute;
-    background-image: url('/src/images/missile_PNG28.png');
+    background-image: url('../images/missile_PNG28.png');
     background-size: cover;
     z-index: 2;
 }
 .enemy{
     position: absolute;
-    background-image: url('/src/images/enemy.png');
+    background-image: url('../images/enemy.png');
     background-size:cover;
     z-index: 2;
 }
 .cloud{
     position: absolute;
-    background-image: url('/src/images/cloud.png');
+    background-image: url('../images/cloud.png');
     background-size:cover;
     z-index: 1;
 }

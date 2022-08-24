@@ -44,10 +44,10 @@ function initGameObjects() {
             enemyElement.style.left = Math.floor(Math.random()*(gameScreen.offsetWidth-stats.width)) + 'px';
             enemyElement.style.top = 0-stats.height + 'px';
             if(stats == state.enemyStateT2){
-                enemyElement.style.backgroundImage = 'url("/src/images/enemyT2.png")';
+                enemyElement.style.backgroundImage = 'url("./images/enemyT2.png")';
                 enemyElement.classList.add('enemyT2');
             }else if(stats == state.enemyStateT3){
-                enemyElement.style.backgroundImage = 'url("/src/images/enemyT3.png")';
+                enemyElement.style.backgroundImage = 'url("./images/enemyT3.png")';
                 enemyElement.classList.add('enemyT3');
             }
 
