@@ -45,7 +45,7 @@ function initGameObjects() {
                 enemyElement.style.backgroundImage = 'url("/src/css/images/enemyT2.png")';
                 enemyElement.classList.add('enemyT2');
             }else if(stats == state.enemyStateT3){
-                enemyElement.style.backgroundImage = 'url("/src/css/images/enemyT3.jpg")';
+                enemyElement.style.backgroundImage = 'url("/src/css/images/enemyT3.png")';
                 enemyElement.classList.add('enemyT3');
             }
 
