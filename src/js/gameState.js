@@ -34,12 +34,14 @@ function initState(){
             height:147,
             speed: 3,
             hp:4,
+            willManeuver:0
         },
         enemyStateT3:{
             width:142,
             height:268,
             speed: 3,
             hp: 8,
+            willManeuver:0
         },
         missileState:{
             width: 23,

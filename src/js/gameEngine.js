@@ -7,6 +7,10 @@ function start(state, game){
 
 function gameLoop(state, game, timestamp){
 
+    //TEST TEST TEST
+
+
+
     //destructing object
     const {playerAvatar} = state;
     const {playerAvatarElement} = game;
@@ -32,11 +36,15 @@ function gameLoop(state, game, timestamp){
     if(timestamp > state.enemyState.nextSpawnTimestamp){
         state.enemyState.nextSpawnTimestamp = timestamp + Math.random()*state.enemyState.maxSpawnInterval;
         let spawnType = Math.round(Math.random()*100);
+ 
         if(spawnType <= 80){
             game.createEnemy(state.enemyState);
         }else if(spawnType > 80 && spawnType < 95){
-            game.createEnemy(state.enemyStateT2);        
+
+            game.createEnemy(state.enemyStateT2);  
+                  
         }else if(spawnType >= 95){
+
             game.createEnemy(state.enemyStateT3);        
         }
     }
@@ -56,22 +64,25 @@ function gameLoop(state, game, timestamp){
 
     enemyElements.forEach(enemy=>{
         let posY = parseInt(enemy.style.top);
+        let posX = parseInt(enemy.style.left);
 
-        //detect collision with playerAvatar
-        if(detectCollision(playerAvatarElement,enemy)){
-            state.gameOver = true;
-        }
 
         if(posY < gameScreen.offsetHeight){
             enemy.style.top = posY + state.enemyState.speed + 'px';
+
             if(enemy.classList.contains('enemyT2')){
-                enemy.style.top = posY + state.enemyStateT2.speed + 'px';
+                enemy.style.top = posY + state.enemyStateT2.speed + 'px';      
             }
             else if(enemy.classList.contains('enemyT3')){
-                enemy.style.top = posY + state.enemyStateT3.speed + 'px';
+                enemy.style.top = posY + state.enemyStateT3.speed + 'px'; 
             }
         }else{
             enemy.remove();
+        }
+
+         //detect collision with playerAvatar
+         if(detectCollision(playerAvatarElement,enemy)){
+            state.gameOver = true;
         }
     });
 
