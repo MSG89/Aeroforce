@@ -1,10 +1,12 @@
 function initGameObjects() {
     startScreen = document.querySelector('.start-screen');
     gameScreen = document.querySelector('.game-screen');
+    scoreScreen = document.querySelector('.score');
 
     return{
         startScreen,
         gameScreen,
+        scoreScreen,
         createPlayerAvatar(initialState){
             let playerAvatarElement = document.createElement('div');
             playerAvatarElement.classList.add('player-avatar');

@@ -7,13 +7,11 @@ function start(state, game){
 
 function gameLoop(state, game, timestamp){
 
-    //TEST TEST TEST
-
-
-
     //destructing object
     const {playerAvatar} = state;
     const {playerAvatarElement} = game;
+
+    game.scoreScreen.textContent = `${state.score} pts`; 
 
     modifyPlayerAvatarPosition(state,game);
 
@@ -93,6 +91,13 @@ function gameLoop(state, game, timestamp){
         //detect missile/enemy collision
         enemyElements.forEach(enemy =>{
             if(detectCollision(enemy,missile)){
+                if(enemy.classList.contains('enemyT2')){
+                    state.score += state.killScoreT2;
+                }else if(enemy.classList.contains('enemyT3')){
+                    state.score += state.killScoreT3;
+                }else{
+                    state.score += state.killScoreT1;
+                }
                 enemy.remove();
                 missile.remove();
             }
@@ -112,6 +117,7 @@ function gameLoop(state, game, timestamp){
     if(state.gameOver){
         alert('Game Over');
     }else{
+        state.score += state.scoreRate;
         window.requestAnimationFrame(gameLoop.bind(null, state, game));
     }
 }

@@ -4,6 +4,11 @@ function initState(){
 
     const state = {
         gameOver: false,
+        score: 0,
+        scoreRate: 1,
+        killScoreT1: 100,
+        killScoreT2: 200,
+        killScoreT3: 500,
         playerAvatar:{
             width: 70,
             height: 117,
