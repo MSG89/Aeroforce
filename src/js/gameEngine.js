@@ -108,11 +108,14 @@ function gameLoop(state, game, timestamp){
 function modifyPlayerAvatarPosition(state, game){
     //moving playerAvatar
    const {playerAvatar} = state; 
+   game.playerAvatarElement.style.backgroundImage = 'url("/src/css/images/player.png")';
    if(state.keys.KeyD){
        playerAvatar.posX = Math.min(playerAvatar.posX + playerAvatar.speed, game.gameScreen.offsetWidth - playerAvatar.width);
+       game.playerAvatarElement.style.backgroundImage = 'url("/src/css/images/playerRight.png")';
    }
    if(state.keys.KeyA){
        playerAvatar.posX = Math.max(playerAvatar.posX - playerAvatar.speed,0);
+       game.playerAvatarElement.style.backgroundImage = 'url("/src/css/images/playerLeft.png")';
    }
    if(state.keys.KeyW){
        playerAvatar.posY = Math.max(playerAvatar.posY - playerAvatar.speed,0);
