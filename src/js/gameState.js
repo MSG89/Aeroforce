@@ -10,8 +10,8 @@ function initState(){
         killScoreT2: 200,
         killScoreT3: 500,
         playerAvatar:{
-            width: 70,
-            height: 117,
+            width: 53, //70
+            height: 88, //117
 
             posX: startX,
             posY: startY,
@@ -19,39 +19,36 @@ function initState(){
             speed: 2,  
         },
         cloudState:{
-            width: 150,
-            height: 82,
+            width: 300,
+            height: 164,
             nextSpawnTimestamp: 0,
-            maxSpawnInterval: 3000,
+            maxSpawnInterval: 5000,
             speed: 1,
 
         },
         enemyState:{
-            width:96,
-            height:193,
+            width:48,   //96
+            height:96, //193
             nextSpawnTimestamp: 0,
             maxSpawnInterval: 1500,
             speed: 2,
-            hp: 2,
         },
         enemyStateT2:{
-            width:363,
-            height:147,
+            width:181, // 363
+            height:74, // 147
             speed: 3,
-            hp:4,
             willManeuver:0
         },
         enemyStateT3:{
-            width:142,
-            height:268,
+            width:71, // 142
+            height:134, // 268
             speed: 3,
-            hp: 8,
             willManeuver:0
         },
         missileState:{
-            width: 23,
-            height: 85,
-            speed: 10,
+            width: 12, //23
+            height: 43, //85
+            speed: 8,
             nextSpawnTimestamp: 0,
             spawnInterval: 1000,
         },
