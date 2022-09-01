@@ -17,6 +17,7 @@ function initState(){
             posY: startY,
 
             speed: 3,  
+            hp: 1,
         },
         cloudState:{
             width: 300,
