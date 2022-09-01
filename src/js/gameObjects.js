@@ -64,7 +64,30 @@ function initGameObjects() {
             cloudElement.style.top = stats.height*(-1) + 'px';
 
             this.gameScreen.appendChild(cloudElement);
+        },
+        createBackgroundOcean(stats){
+            let backgroundOceanElement = document.createElement('div');
+            backgroundOceanElement.classList.add('background-ocean');
 
+            backgroundOceanElement.style.width = stats.width + 'px';
+            backgroundOceanElement.style.height = stats.height + 'px';
+
+            backgroundOceanElement.style.left = 0 + 'px';
+            backgroundOceanElement.style.top = stats.height*(-1) + 'px';
+
+            this.gameScreen.appendChild(backgroundOceanElement);
+        },
+        createBackgroundOceanFirst(stats){
+            let backgroundOceanElement = document.createElement('div');
+            backgroundOceanElement.classList.add('background-ocean');
+
+            backgroundOceanElement.style.width = stats.width + 'px';
+            backgroundOceanElement.style.height = stats.height + 'px';
+
+            backgroundOceanElement.style.left = 0 + 'px';
+            backgroundOceanElement.style.top = 0 + 'px';
+
+            this.gameScreen.appendChild(backgroundOceanElement);
         }
     }
 

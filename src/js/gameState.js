@@ -16,14 +16,14 @@ function initState(){
             posX: startX,
             posY: startY,
 
-            speed: 2,  
+            speed: 3,  
         },
         cloudState:{
             width: 300,
             height: 164,
             nextSpawnTimestamp: 0,
             maxSpawnInterval: 5000,
-            speed: 1,
+            speed: 2,
 
         },
         enemyState:{
@@ -31,19 +31,17 @@ function initState(){
             height:96, //193
             nextSpawnTimestamp: 0,
             maxSpawnInterval: 1500,
-            speed: 2,
+            speed: 3,
         },
         enemyStateT2:{
             width:181, // 363
             height:74, // 147
-            speed: 3,
-            willManeuver:0
+            speed: 4,
         },
         enemyStateT3:{
             width:71, // 142
             height:134, // 268
-            speed: 3,
-            willManeuver:0
+            speed: 4,
         },
         missileState:{
             width: 12, //23
@@ -51,6 +49,13 @@ function initState(){
             speed: 8,
             nextSpawnTimestamp: 0,
             spawnInterval: 1000,
+        },
+        backgroundState:{
+            width: 2560,
+            height: 1440,
+            nextSpawnTimestamp: 0,
+            maxSpawnInterval: 10000,
+            speed: 1,
         },
         keys:{
             KeyA: false,

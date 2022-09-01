@@ -53,27 +53,32 @@ body{
     position: absolute;
     background-image: url('../images/player.png');
     background-size:cover;
-    z-index: 2;
+    z-index: 3;
 }
 .missile{
     position: absolute;
     background-image: url('../images/missile_PNG28.png');
     background-size: cover;
-    z-index: 2;
+    z-index: 3;
 }
 .enemy{
     position: absolute;
     background-image: url('../images/enemy.png');
     background-size:cover;
-    z-index: 2;
+    z-index: 3;
 }
 .cloud{
     position: absolute;
     background-image: url('../images/cloud.png');
     background-size:cover;
+    z-index: 2;
+}
+.background-ocean{
+    position: absolute;
+    background-image: url('../images/backgroundOcean.png');
+    background-size:cover;
     z-index: 1;
 }
-
 .hidden{
     display:none;
 }

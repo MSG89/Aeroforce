@@ -3,6 +3,7 @@ function start(state, game){
     game.createPlayerAvatar(state.playerAvatar);
 
     window.requestAnimationFrame(timestamp => gameLoop(state,game,timestamp));
+    game.createBackgroundOceanFirst(state.backgroundState);
 }
 
 function gameLoop(state, game, timestamp){
@@ -28,6 +29,12 @@ function gameLoop(state, game, timestamp){
     if(timestamp > state.cloudState.nextSpawnTimestamp){
         game.createCloud(state.cloudState);
         state.cloudState.nextSpawnTimestamp = timestamp + Math.random()*state.cloudState.maxSpawnInterval;
+    }
+
+    //create background Ocean
+    if(timestamp > state.backgroundState.nextSpawnTimestamp){
+        game.createBackgroundOcean(state.backgroundState);
+        state.backgroundState.nextSpawnTimestamp = timestamp + state.backgroundState.maxSpawnInterval;
     }
 
     //create enemy
@@ -56,6 +63,16 @@ function gameLoop(state, game, timestamp){
             cloud.remove();
         }
     });
+
+    //Render background
+    document.querySelectorAll('.background-ocean').forEach(ocean=>{
+        let posY = parseInt(ocean.style.top);
+        if(posY < gameScreen.offsetHeight){
+            ocean.style.top = posY + state.backgroundState.speed + 'px';
+        }else{
+            ocean.remove();
+        }
+    })
 
     //Render enemy planes
     let enemyElements = document.querySelectorAll('.enemy');
